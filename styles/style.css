@@ -12,30 +12,61 @@ body {
 }
 
 .header > {
-    top: 0;
+    margin: 0;
 }
 
 .header > .nav {
     text-align: center;
 }
 
-.header > .nav > .nav-ul {
-
-}
-
 .header > .nav > .nav-ul > .nav-li {
     display: inline-block;
     font-size: 16px;
+    margin: 0;
+    padding: 1em;
+    transition: all 0.5s linear;
 }
 
 .header > .nav > .nav-ul > .nav-li > .nav-a {
     color: #757575;
-    padding: 1em;
     text-decoration: none;
-    transition: all 0.5s linear;
 }
 
-.header > .nav > .nav-ul > .nav-li > .nav-a:hover {
+.header > .nav > .nav-ul > .nav-li.active {
     background: #CFD8DC;
+}
+
+.header > .nav > .nav-ul > .nav-li:hover {
+    background: #CFD8DC;
+}
+
+.header > .nav > .nav-ul > .nav-li.active > .nav-a {
+    color:#009688;
+}
+
+.header > .nav > .nav-ul > .nav-li:hover > .nav-a{
     color: #009688;
+}
+
+.header > .headerimg {
+    margin-top: -1em;
+}
+
+.header > .headerimg > .tittleimage {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(../images/viewport-image.png);
+    height: 100vh;
+}
+
+.header > .headerimg> .tittle {
+    color: #009688;
+    font-size: 5em;
+    margin: 0;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+    z-index: 1;
 }
