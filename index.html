@@ -10,6 +10,29 @@
         <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="./styles/style.css"/>
 
+        <!-- Scripts -->
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA-jpiiZm0kg4wbYwPvUtNZvyLbiNcz6p8"></script>
+        <script>
+            function initialize() {
+                var myLatLng = {lat: 37.397154, lng: -5.950961};
+
+                var mapProp = {
+                    center:myLatLng,
+                    zoom:15,
+                    mapTypeId:google.maps.MapTypeId.ROADMAP
+                };
+                var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+                var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    title: 'Aqui estamos'
+                });
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+
+        <script src="./js/jquery-3.2.1.min.js"></script>
 
         <title>Juan Arillo CV</title>
     </head>
@@ -18,22 +41,25 @@
             <nav class="nav">
                 <ul class="nav-ul">
                     <li class="nav-li active">
-                        <a href="#" class="nav-a">Land</a>
+                        <a href="#" class="nav-a">Inicio</a>
                     </li>
                     <li class="nav-li">
-                        <a href="#me" class="nav-a">Me</a>
+                        <a href="#whoiam" class="nav-a">Info</a>
                     </li>
                     <li class="nav-li">
-                        <a href="#background" class="nav-a">Background</a>
+                        <a href="#background" class="nav-a">Estudios</a>
                     </li>
                     <li class="nav-li">
-                        <a href="#experience" class="nav-a">Experience</a>
+                        <a href="#experience" class="nav-a">Experiencia</a>
                     </li>
                     <li class="nav-li">
-                        <a href="#about" class="nav-a">About me</a>
+                        <a href="#about" class="nav-a">Sobre mi</a>
                     </li>
                     <li class="nav-li">
-                        <a href="" class="nav-a">Contact</a>
+                        <a href="#contact" class="nav-a">Contacto</a>
+                    </li>
+                    <li class="nav-li">
+                        <a href="#comments" class="nav-a">Comentarios</a>
                     </li>
                 </ul>
             </nav>
@@ -47,14 +73,227 @@
             </section>
         </header>
         <main class="container">
-            <section id="me">esto es me</section>
-            <section id="background"></section>
-            <section id="experience"></section>
-            <section id="about"></section>
+            <section id="whoiam" class="who section-container clearfix" >
+                <div class="myphoto">
+                    <img src="./images/yo.png" alt="Juan Arillo">
+                </div>
+                <div class="info">
+                    <h2>Info:</h2>
+                    <span>
+                        Durante mis años como profesional, me he dedicado principalmente a la Consultoría de Software de Gestión Empresarial, desde puestos de Técnico hasta puesto de Gestión y Dirección de Proyectos.<br>
+                        Di un cambio a mi carrera y, actualmente, me dedico al desarrollo, manejando tecnologías FrontEnd, BackEnd y mobile, que me capacitan como un desarrollador completo, y que conoce todo el flujo que relaciona estas tecnologías.<br>
+                        Entre otros desarrollo HTML, CSS, Javascript Front y Back (NodeJS, Angular JS, Angular 2 y 4), Python (Django y Odoo), iOS (Objective C y swift) y Android.<br>
+                        Me encanta este mundo, afrontar nuevos retos y seguir aprendiendo en este sector en continua evolución.<br>
+                    </span>
+                </div>
+            </section>
+            <section id="background" class="back section-container clearfix">
+                <div class="backtitle">
+                    <h2>Estudios:</h2>
+                </div>
+                <div class="backlist">
+                    <div class="col1">
+                        <ul>
+                            <li>KeepCoding Web Bootcamp:</li>
+                            <div>
+                                -	Web Stacks (Javascript, Python, Django, NodeJS, Express, Angular)<br>
+                                -	Bases de Datos (PostgreSQL, MongoDB, Redis, Elastic Search)<br>
+                                -	Microservicios y REST (Celery, RabbitMQ, API Rest)<br>
+                                -	Scrum, Agile y TDD<br>
+                                -	Interfaces (CSS3, HTML5, Responsive Design y Gulp)<br>
+                                -	Findability (SEO, UX, Analytics, Tests A/B y Arquitectura de la información)
 
+                            </div>
+                            <li>KeepCoding Mobile Bootcamp:</li>
+                            <div>
+                                -	Git, Github & SourceTree<br>
+                                -	Advanced IOS Development (Cocoa / Objective-C / Swift / Reactive Cocoa, Mantle, AFNetworking & Core Data)
+                                -	Advanced Android Development<br>
+                                -	Backend Development (Javascript + Node.JS + MongoDB + Redis<br>
+                                -	Backend DevOps<br>
+                                -	Web 2.0 App Development (AngularJS / Html5 / CSS3 / JS)<br>
+                                -	BaaS (Backend As A Service: AWS / Azure / Parse)<br>
+                                -	Gestión de proyectos Ágiles con Scrum<br>
+                                -	TDD (Test-Driven Development)<br>
+                                -	UX Design (Sketch)<br>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="col2">
+                        <ul>
+                            <li>Curso Técnico Superior en Usabilidad y Experiencia de Usuario (UX) Online del Instituto Internacional de Marketing.</li>
+                            <li>Especialista en Gestión y Desarrollo de Aplicaciones Multiplataforma en SEAS.</li>
+                            <li>Consultor funcional SAP (Abap y módulos FI, CO, SD, MM - SRM, PS) en Soltel.</li>
+                            <li>Desarrollo de aplicaciones IOs y Android.</li>
+                            <li>Oracle e-business suite 11i y Oracle Database 10g en la Oracle University.</li>
+                            <li>Master en programación y administración avanzada de Bases de Datos en INATED.</li>
+                            <li>Curso de HTML5 y CSS3 en Escuela IT.</li>
+                            <li>Curso de JAVASCRIPT, JQUERY y ANGULAR JS en Escuela IT.</li>
+                            <li>Curso de PHP, PHP Avanzado y Laravel en Escuela IT.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="experience" class="exp section-container clearfix">
+                <div class="exptitle">
+                    <h2>Experiencia:</h2>
+                </div>
+                <div class="exptable">
+                    <TABLE>
+                        <TR>
+                            <TH COLSPAN=1>Fecha</TH>
+                            <TH COLSPAN=1>Actividad</TH>
+                        </TR>
+                        <TR>
+                            <TD>Mayo 2017 – Actualmente</TD>
+                            <TD>Desarrollo en Python de módulos y funcionalidades para ERP Odoo.</TD>
+                        </TR>
+                        <TR>
+                            <TD>Enero 2016 – Febrero 2017</TD>
+                            <TD>Consultor SAP Business One </TD>
+                        </TR>
+                        <tr>
+                            <td>Noviembre 2014 – Febrero 2015</td>
+                            <td>Director de Proyectos</td>
+                        </tr>
+                        <tr>
+                            <td>Enero 2014 – Mayo 2014</td>
+                            <td>Jefe de proyectos</td>
+                        </tr>
+                        <tr>
+                            <td>Enero – 2013</td>
+                            <td>Formador</td>
+                        </tr>
+                        <tr>
+                            <td>Diciembre 2007 - Febrero 2012</td>
+                            <td>Técnico de Marketing Analítico</td>
+                        </tr>
+                        <tr>
+                            <td>Abril 2007 – Diciembre 2007</td>
+                            <td>Delegado</td>
+                        </tr>
+                        <tr>
+                            <td>Abril 2005 – Abril 2007</td>
+                            <td>Director de Consultoría</td>
+                        </tr>
+                        <tr>
+                            <td>Octubre 2004 – Marzo 2005</td>
+                            <td>Responsable del área de informática</td>
+                        </tr>
+                        <tr>
+                            <td>Noviembre 2003 – Mayo 2004</td>
+                            <td>Consultor Tecnológico</td>
+                        </tr>
+                    </TABLE>
+                </div>
+            </section>
+            <section id="about" class="abo section-container clearfix">
+                <div class="abotitle">
+                    <h2>Sobre mi:</h2>
+                </div>
+                <div class="abocontent">
+                    <div class="likes">
+                        <p>
+                            Soy un gran aficionado a todo lo que sean nuevas tecnologías, ya sea a nivel programación o gadgets.
+                            Realizo deporte de andar por casa, es decir, spinning, ya que el trabajo y mi hijo me tienen copado
+                            el día.
+                            Me encanta pasar el rato con mi hijo y con mi mujer.
+                        </p>
+                    </div>
+                    <div class="abovideo">
+                        <video id="video" width="600" height="350" controls>
+                            <source src="./video/samplevideo.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </section>
+            <section id="contact" class="con section-container clearfix">
+                <div class="contitle">
+                    <h2>Contacto:</h2>
+                </div>
+                <div>
+                    <div class="form">
+                        <form name="contacto" method="get" novalidate>
+                            <div class="form-row">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+
+                                <label for="apellidos">Apellidos:</label>
+                                <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" required>
+                            </div>
+
+                            <div class="form-row">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" placeholder="name@company.com"
+                                       pattern="[A-Za-z0-9\.\+]+@[A-Za-z0-9]+\.[A-Za-z0-9\.]+" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div>Como me has conocido</div>
+                                <label for="option_1">Linkedin</label>
+                                <input type="radio" id="option_1" name="contact" value="linkedin" class="option">
+
+                                <label for="option_2">Facebook</label>
+                                <input type="radio" id="option_2" name="contact" value="facebook" class="option">
+
+                                <label for="option_3">Otros</label>
+                                <input type="radio" id="option_3" name="contact" value="otros" class="option">
+                            </div>
+
+                            <div id="contact-text-div">
+                                <input type="text" id="contact-text" name="contact-text" >
+                            </div>
+
+                            <div class="form-row">
+                                <label for="cont_number">Teléfono de contacto:</label>
+                                <input type="tel" id="cont_number" name="contact_number" min="9" max="9" pattern="[0-9]{9}">
+                            </div>
+
+                            <div class="form-row">
+                                <label for="more">¿Algo mas?</label>
+                                <textarea id="more" name="more" cols="70" rows="10"></textarea>
+                            </div>
+
+                            <div class="form-row">
+                                <button type="submit" id="enviar">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="googlemap">
+                        <div id="googleMap"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="comments" class="sec section-container clearfix">
+                <div class="comtitle">
+                    <h2>Comentarios:</h2>
+                </div>
+                <div class="comcontainer clearfix">
+                    <div class="com1">
+                        <h3>Añada un comentario</h3>
+                        <form>
+                            <input type="text" id="newCommentText" name="comment-text" placeholder="Comentario..." required>
+                            <br>
+                            <br>
+                            <button id="sendNewComment">Enviar</button>
+                        </form>
+                    </div>
+
+                    <div class="com2">
+                        <h3>Comentarios Anteriores</h3>
+                        <div class="loader"></div>
+                        <div>
+                            <ul id="commentContainer">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
-        <script>
-
-        </script>
+        <footer class="section-container">
+            Juan Arillo &copy 2017
+        </footer>
+        <script src="./js/dinamic.js"></script>
+        <script src="./js/ajax.js"></script>
     </body>
 </html>

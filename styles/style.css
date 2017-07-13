@@ -4,11 +4,138 @@
     -moz-box-sizing: border-box;
 }
 
+.abocontent {
+    padding-top: 1em;
+}
+
+.abovideo {
+    float: left;
+    max-width: 45%;
+}
+
+.backlist li {
+    padding-top: 1em;
+}
+
 body {
     color: #757575;
     font-family: 'Ubuntu', sans-serif;
     margin: 0;
     padding: 0;
+}
+
+.clearfix:after {
+    content: " "; /* Older browser do not support empty content */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.col1 {
+    float: left;
+    max-width: 50%;
+}
+
+.col2 {
+    float: right;
+    max-width: 50%;
+}
+
+.com1 {
+    float: left;
+    max-width: 40%;
+}
+
+.com2 {
+    float: right;
+    max-width: 40%;
+}
+
+.comcontainer {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.con {
+    background: #CFD8DC;
+}
+
+#contact-text-div {
+    display: none;
+}
+
+.deleteComment {
+    margin-left: 1em;
+}
+
+.exp, footer {
+    background: #CFD8DC;
+}
+
+.exp > .exptable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.exptable table td {
+    display: table-cell;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: 3em;
+    padding-left: 3em;
+    margin: 1em;
+}
+
+.exptable table th {
+    color: #455A64;
+}
+
+.exptable table tr {
+    margin-left: 1em;
+    margin-right: 5em;
+}
+
+footer {
+    text-align: center;
+}
+
+.form {
+    float: left;
+    max-width: 50%;
+    padding: 0 1.25em;
+}
+
+.form-row {
+    padding: 0.6em;
+}
+
+.form-row div {
+    margin-bottom: 1em;
+}
+
+.form-row label {
+    margin-right: .5em;
+}
+
+.form-row input {
+    margin-right: 1em;
+}
+
+.googlemap {
+    float: right;
+    max-width: 50%;
+}
+
+#googleMap {
+    height: 31.25em;
+    width: 43.75em;
+}
+
+h2 {
+    color: #455A64;
 }
 
 .header > {
@@ -17,6 +144,10 @@ body {
 
 .header > .nav {
     text-align: center;
+}
+
+.header > .nav > .nav-ul {
+    font-size: 0;
 }
 
 .header > .nav > .nav-ul > .nav-li {
@@ -40,16 +171,12 @@ body {
     background: #CFD8DC;
 }
 
-.header > .nav > .nav-ul > .nav-li.active > .nav-a {
+.header > .nav > .nav-ul > .nav-li.active a {
     color:#009688;
 }
 
-.header > .nav > .nav-ul > .nav-li:hover > .nav-a{
+.header > .nav > .nav-ul > .nav-li:hover a {
     color: #009688;
-}
-
-.header > .headerimg {
-    margin-top: -1em;
 }
 
 .header > .headerimg > .tittleimage {
@@ -69,4 +196,42 @@ body {
     top: 50%;
     width: 100%;
     z-index: 1;
+}
+
+li + div {
+    padding-top: 1em;
+}
+
+.likes {
+    float: right;
+    max-width: 55%;
+}
+
+.section-container {
+    padding: 3em;
+}
+
+textarea {
+    display: block;
+    margin-top: 1em;
+}
+
+.who {
+    background: #CFD8DC;
+}
+
+.who > .myphoto {
+    float: left;
+    max_width: 40%;
+}
+
+.who > .myphoto img {
+    height: 31em;
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.who > .info {
+    float: right;
+    max-width: 60%;
 }
