@@ -4,44 +4,69 @@
 
 /* Smooth Scroll */
 
-var navItems = document.getElementsByClassName('nav-li')
+$(document).ready(function(){
+    // Add smooth scrolling to all links
+    $("a").on('click', function(event) {
 
-for (var i = 0; i < navItems.length; i++) {
-    navItems[i].addEventListener('click', function (event){
-        var goTo = this.getElementsByTagName('a')[0].href.split("#")
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
 
-        if (goTo.length === 2) {
-                event.preventDefault();
-                var target = goTo[goTo.length - 1];
-                getElementByIdandScroll(target);
-        }
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function(){
+
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+            });
+        } // End if
     });
-}
+});
 
-function getElementByIdandScroll(id) {
-    var elem;
-    if (id === '') {
-        elem = document.getElementsByClassName('headerimg')[0];
-    } else {
-        elem = document.getElementById(id);
-    }
-
-    scrollToElement(elem);
-}
-
-function scrollToElement (element) {
-    var jump = parseInt(element.getBoundingClientRect().top * 0.3);
-
-    document.body.scrollTop += jump;
-
-    if (!element.lastJump || element.lastJump > Math.abs(jump)) {
-        element.lastJump = Math.abs(jump);
-
-        setTimeout(function() {
-            scrollToElement(element);
-        }, 40);
-    }
-}
+// var navItems = document.getElementsByClassName('nav-li')
+//
+// for (var i = 0; i < navItems.length; i++) {
+//     navItems[i].addEventListener('click', function (event){
+//         var goTo = this.getElementsByTagName('a')[0].href.split("#")
+//
+//         if (goTo.length === 2) {
+//                 event.preventDefault();
+//                 var target = goTo[goTo.length - 1];
+//                 getElementByIdandScroll(target);
+//         }
+//     });
+// }
+//
+// function getElementByIdandScroll(id) {
+//     var elem;
+//     if (id === '') {
+//         elem = document.getElementsByClassName('headerimg')[0];
+//     } else {
+//         elem = document.getElementById(id);
+//     }
+//
+//     scrollToElement(elem);
+// }
+//
+// function scrollToElement (element) {
+//     var jump = parseInt(element.getBoundingClientRect().top * 0.3);
+//
+//     document.body.scrollTop += jump;
+//
+//     if (!element.lastJump || element.lastJump > Math.abs(jump)) {
+//         element.lastJump = Math.abs(jump);
+//
+//         setTimeout(function() {
+//             scrollToElement(element);
+//         }, 40);
+//     }
+// }
 
 /* Navigation */
 
